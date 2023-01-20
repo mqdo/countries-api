@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Header = () => {
+import { BsFillMoonFill } from 'react-icons/bs'
+
+const Header = ({ theme, setTheme }) => {
   return (
-    <div>Header</div>
+    <div className='w-full h-16 bg-neutral-50 dark:bg-neutral-600 text-neutral-900 dark:text-neutral-50 shadow-lg'>
+      <div className='w-full h-full px-4 md:max-w-[1200px] mx-auto flex justify-between items-center'>
+        <h1 className='text-xl font-extrabold'>Where in the world?</h1>
+        <button className='font-semibold capitalize flex items-center gap-2'>
+          <BsFillMoonFill fill={theme === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'} />
+          {theme} Mode
+        </button>
+      </div>
+    </div>
   )
 }
 
