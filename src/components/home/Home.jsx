@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 
 import Dropdown from './Dropdown'
 import CountryCard from './CountryCard'
+import Spinner from '../Spinner'
 import { debounce } from '../../utils'
 import { BiSearch } from 'react-icons/bi'
 import { BsChevronDown } from 'react-icons/bs'
@@ -26,7 +27,7 @@ const Home = ({ theme, countries, region, setRegion, handleCallApi, toggleDropdo
   }
 
   return (
-    <div className=' w-full md:max-w-[1200px] mx-auto px-4 py-8 flex flex-col justify-between items-center text-sm'>
+    <main aria-level='main feed' role='feed' className=' w-full md:max-w-[1200px] mx-auto px-4 py-8 flex flex-col justify-between items-center text-sm'>
       <div className='w-full flex flex-col md:flex-row justify-between gap-8 md:gap-4 font-semibold'>
         <div className='w-full md:w-[420px] relative'>
           <div className='absolute left-8 top-[50%] -translate-y-[50%]'>
@@ -65,12 +66,12 @@ const Home = ({ theme, countries, region, setRegion, handleCallApi, toggleDropdo
           }
         </div>
       </div>
-      {loading ? <p className='p-8 text-center'>Loading...</p> :
+      {loading ? <Spinner theme={theme} /> :
         <div className='w-full px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8'>
           {countries.map((country, index) => <CountryCard key={index} country={country} />)}
         </div>
       }
-    </div>
+    </main>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
+import Spinner from './Spinner';
 import { useCallApi } from '../hooks';
 import { numberWithDots, getLanguages, getBorders } from '../utils';
 import { BiArrowBack } from 'react-icons/bi';
@@ -44,14 +45,14 @@ const Country = ({ theme, loading, setLoading }) => {
   }, [loading])
 
   return (
-    <div className=' w-full md:max-w-[1200px] mx-auto px-4 py-8 text-base break-words'>
+    <main aria-level='main article' role='article' className=' w-full md:max-w-[1200px] mx-auto px-4 py-8 text-base break-words'>
       <button className='bg-neutral-50 dark:bg-neutral-600 rounded-md py-1 px-6 shadow-md'>
         <Link to='/' className=' flex items-center gap-2'>
           <BiArrowBack size={16} fill={theme === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'} />
           <span>Back</span>
         </Link>
       </button>
-      {loading ? <p className='p-8 text-center'>Loading...</p> :
+      {loading ? <Spinner theme={theme} /> :
         <div className='w-full py-8 flex flex-col md:flex-row justify-between items-center md:items-start md:gap-12 md:flex-1'>
           <div className='w-full'>
             <img src={country?.flags?.svg} alt={country?.name} loading='lazy' />
@@ -87,7 +88,7 @@ const Country = ({ theme, loading, setLoading }) => {
           </div>
         </div>
       }
-    </div>
+    </main>
   )
 }
 

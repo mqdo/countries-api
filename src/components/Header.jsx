@@ -13,7 +13,7 @@ const Header = ({ theme, setTheme }) => {
   }
 
   return (
-    <div className='w-full h-16 bg-neutral-50 dark:bg-neutral-600 shadow-lg'>
+    <header aria-level='top heading' role='heading' className='w-full h-16 bg-neutral-50 dark:bg-neutral-600 shadow-lg'>
       <div className='w-full h-full px-4 md:max-w-[1200px] mx-auto flex justify-between items-center'>
         <Link to='/'>
           <h1 className='text-xl font-extrabold'>Where in the world?</h1>
@@ -23,7 +23,7 @@ const Header = ({ theme, setTheme }) => {
           <span className='hidden md:block'>{theme} Mode</span>
         </button>
       </div>
-    </div>
+    </header>
   )
 }
 
