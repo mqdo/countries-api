@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import Masonry from 'react-masonry-css'
 
 import Dropdown from './Dropdown'
 import CountryCard from './CountryCard'
@@ -7,13 +6,6 @@ import { debounce } from '../../utils'
 import { BiSearch } from 'react-icons/bi'
 import { BsChevronDown } from 'react-icons/bs'
 import { MdClear } from 'react-icons/md'
-
-const breakpointColumnsObj = {
-  default: 4,
-  1100: 3,
-  700: 2,
-  500: 1
-};
 
 const Home = ({ theme, countries, region, setRegion, handleCallApi, toggleDropdown, setToggleDropdown, loading }) => {
   const inputRef = useRef();
@@ -74,14 +66,8 @@ const Home = ({ theme, countries, region, setRegion, handleCallApi, toggleDropdo
         </div>
       </div>
       {loading ? <p className='p-8 text-center'>Loading...</p> :
-        <div className='w-full py-8'>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            {countries.map((country, index) => <CountryCard key={index} country={country} />)}
-          </Masonry>
+        <div className='w-full py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-8'>
+          {countries.map((country, index) => <CountryCard key={index} country={country} />)}
         </div>
       }
     </div>
