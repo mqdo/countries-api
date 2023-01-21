@@ -19,7 +19,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
-      }
+      },
     },
   },
   plugins: [],
