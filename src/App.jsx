@@ -62,7 +62,7 @@ const App = () => {
 
   return (
     <div
-      className='min-h-[100vh] bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-50 relative'
+      className='min-h-[100vh] w-full bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-50 relative'
       onClick={handleToggleDropdown}
     >
       <Header theme={theme} setTheme={setTheme} />

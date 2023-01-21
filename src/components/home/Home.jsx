@@ -66,7 +66,7 @@ const Home = ({ theme, countries, region, setRegion, handleCallApi, toggleDropdo
         </div>
       </div>
       {loading ? <p className='p-8 text-center'>Loading...</p> :
-        <div className='w-full py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-8'>
+        <div className='w-full px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8'>
           {countries.map((country, index) => <CountryCard key={index} country={country} />)}
         </div>
       }

@@ -20,7 +20,7 @@ const Header = ({ theme, setTheme }) => {
         </Link>
         <button className='font-semibold capitalize flex items-center gap-2' onClick={handleChangeTheme}>
           <BsFillMoonFill fill={theme === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'} />
-          {theme} Mode
+          <span className='hidden md:block'>{theme} Mode</span>
         </button>
       </div>
     </div>

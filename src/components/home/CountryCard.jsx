@@ -7,7 +7,7 @@ const CountryCard = ({ country }) => {
   return (
     <div className=' bg-neutral-50 dark:bg-neutral-600 flex flex-col rounded-md shadow-md hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl'>
       <Link to={`/country/${country.alpha3Code}`}>
-        <img src={country.flags.svg} alt={country.name} loading='lazy' className='w-full h-40 rounded-t-md object-cover object-center' />
+        <img src={country.flags.svg} alt={country.name} loading='lazy' className='w-full h-48 md:h-40 rounded-t-md object-cover object-center' />
         <div className='w-full p-4'>
           <h3 className='pb-4 text-base font-extrabold'>{country.name}</h3>
           <p><span className='font-semibold'>Population: </span><span>{numberWithDots(country.population)}</span></p>
